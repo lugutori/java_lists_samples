@@ -1,9 +1,9 @@
-package co.lugutori.samples.list;
+package co.lugutori.samples.linkedlist;
 
-public class List<T> {
+public class MyLinkedList<T> {
     public Node<T> head;
 
-    public List(){
+    public MyLinkedList(){
         head = null;
     }
     public void addNode(T data){

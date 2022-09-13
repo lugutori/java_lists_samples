@@ -1,11 +1,12 @@
 package co.lugutori.samples;
 
-import co.lugutori.samples.list.List;
+import co.lugutori.samples.arraylist.MyList;
+import co.lugutori.samples.linkedlist.MyLinkedList;
 
 class Main {
     public static void main(String[] args){
         System.out.println("Hello Lists World");
-        List<String> stringList = new List<>();
+        MyLinkedList<String> stringList = new MyLinkedList<>();
 
         stringList.addNode("Uno");
         stringList.addNode("Dos");
@@ -14,7 +15,7 @@ class Main {
 
         System.out.println(stringList);
 
-        List<Integer> intList = new List<>();
+        MyLinkedList<Integer> intList = new MyLinkedList<>();
         intList.addNode(1);
         intList.addNode(2);
         intList.addNode(3);
@@ -34,32 +35,32 @@ class Main {
         list.add(5);
         list.add(1);
         list.add(9);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
 
         list.removePos(5);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.removePos(7);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.removePos(2);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.removePos(0);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
 
         list.add(0,10);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.add(1,10);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.add(2,10);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.add(3,10);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.add(4,10);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.add(5,10);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.add(6,10);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
         list.add(7,10);
-        System.out.println("list: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
+        System.out.println("linkedlist: " + list + " size: " + list.getSize() + " capacity: " + list.getCapacity());
     }
 }

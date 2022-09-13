@@ -1,4 +1,4 @@
-package co.lugutori.samples.list;
+package co.lugutori.samples.linkedlist;
 
 public class Node<T> {
     private T data;

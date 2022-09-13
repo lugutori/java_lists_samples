@@ -2,16 +2,16 @@ package co.lugutori.samples.arraylist;
 
 import java.util.Arrays;
 
-public class MyList<T> {
+public class MyArrayList<T> {
     private T[] listArray;
     private int size = 0;
     private int capacity;
     private final int INITIAL_CAPACITY = 10;
 
-    public MyList() {
+    public MyArrayList() {
     }
 
-    public MyList(int initialCapacity) {
+    public MyArrayList(int initialCapacity) {
         initListWithCapacity(initialCapacity);
     }
     

@@ -1,20 +1,17 @@
-package co.lugutori.samples.linkedlist;
+package co.lugutori.samples.doublelinkedlist;
 
 public class Node<T> {
     private T data;
-    public Node<T> next;
+    Node<T> next;
+    Node<T> previous;
 
     public Node(T data){
         this.data = data;
         this.next = null;
+        this.previous = null;
     }
-    public void setData(T data){
-        this.data = data;
-    }
+
     public T getData(){
         return this.data;
-    }
-    public void setNext(Node<T> node){
- 
     }
 }

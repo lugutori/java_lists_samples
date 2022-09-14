@@ -89,6 +89,10 @@ public class MyArrayList<T> {
         return Arrays.toString(Arrays.copyOfRange(listArray, 0, size));
     }
 
+    public T get(int pos) {
+        throw NotImplementedException("")
+    }
+
     private void initListWithCapacity(int initialCapacity) {
         this.capacity = initialCapacity;
         listArray = (T[]) new Object[initialCapacity];

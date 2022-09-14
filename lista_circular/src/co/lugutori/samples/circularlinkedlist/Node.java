@@ -1,4 +1,4 @@
-package co.lugutori.samples.linkedlist;
+package co.lugutori.samples.circularlinkedlist;
 
 public class Node<T> {
     private T data;
@@ -8,13 +8,9 @@ public class Node<T> {
         this.data = data;
         this.next = null;
     }
-    public void setData(T data){
-        this.data = data;
-    }
+
     public T getData(){
         return this.data;
     }
-    public void setNext(Node<T> node){
- 
-    }
+
 }

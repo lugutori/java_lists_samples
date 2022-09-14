@@ -78,7 +78,7 @@ public class MyIntList {
     }
 
     public int get(int pos) {
-        throw NotImplementedException("")
+        throw new NotImplementedException();
     }
 
     public int getSize() {

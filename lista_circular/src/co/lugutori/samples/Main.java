@@ -44,6 +44,6 @@ class Main {
         list.add(7,10);
         System.out.println("circularlinkedlist: " + list + " size: " + list.getSize());
         System.out.println("Traversing:");
-        System.out.println(list.taverseTimes(5));
+        System.out.println(list.traverseTimes(5));
     }
 }

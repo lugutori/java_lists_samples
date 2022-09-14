@@ -1,14 +1,14 @@
-package co.lugutori.samples.circularlinkedlist;
+package co.lugutori.samples.doublecircularlinkedlist;
 
 import com.sun.istack.internal.NotNull;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-public class MyCircularLinkedList<T> {
+public class MyDoubleCircularLinkedList<T> {
     private Node<T> head;
     private int size = 0;
     private final int NOT_FOUND = -1;
 
-    public MyCircularLinkedList() {
+    public MyDoubleCircularLinkedList() {
         head = null;
     }
 
@@ -16,32 +16,35 @@ public class MyCircularLinkedList<T> {
         size++;
         Node<T> newNode = new Node<T>(value);
         if (null == head) {
-            head = newNode;
-            newNode.next=head;
+            initList(newNode);
             return;
         }
         Node<T> window = head;
         while (window.next != head) {
             window = window.next;
         }
+        head.previous = newNode;
+        newNode.next = head;
+        newNode.previous = window;
         window.next = newNode;
+    }
+
+    private void initList(Node<T> newNode) {
+        head = newNode;
+        newNode.previous = head;
         newNode.next = head;
     }
 
     public void insert(T value) {
         size++;
         Node<T> newNode = new Node<T>(value);
-        if (null == head) {
-            head = newNode;
-            newNode.next = head;
-            return;
-        }
+        Node<T> lastNode = head.previous;
+        newNode.previous = lastNode;
         newNode.next = head;
-        Node<T> window = head;
-        while(window.next != head){
-            window = window.next;
-        }
-        window.next = newNode;
+
+        head.previous = newNode;
+        lastNode.next = newNode;
+
         head = newNode;
     }
 
@@ -51,7 +54,7 @@ public class MyCircularLinkedList<T> {
             //Throw exception
             return;
         }
-        if(pos == 0){
+        if (pos == 0) {
             insert(value);
             return;
         }
@@ -67,24 +70,11 @@ public class MyCircularLinkedList<T> {
             //Throw exception
             return;
         }
-        size--;
-        if(position == 0){
-            Node<T> window = head;
-            while(window.next != head){
-                window = window.next;
-            }
-            window.next = head.next;
-            head = head.next;
-            return;
-        }
-
         Node<T> window = head;
-        for (int i = 0; i < position-1; i++) {
+        for (int i = 0; i < position; i++) {
             window = window.next;
         }
-        Node<T> nextNode = window.next;
-        window.next = nextNode.next;
-        nextNode.next = null;
+        remove(window);
     }
 
     public void removeValue(T value) {
@@ -129,6 +119,29 @@ public class MyCircularLinkedList<T> {
         return builder.toString();
     }
 
+    public String traverse() {
+        StringBuilder builder = new StringBuilder("[");
+        Node<T> window = head;
+        do {
+            builder.append(window.getData().toString());
+            if (head != window.next) {
+                builder.append(",");
+            }
+            window = window.next;
+        } while (window != head);
+        builder.append("]\nReverse: \n[");
+        window = head.previous;
+        do {
+            builder.append(window.getData().toString());
+            if (window != head) {
+                builder.append(",");
+            }
+            window = window.previous;
+        } while (window != head.previous);
+        builder.append("]");
+        return builder.toString();
+    }
+
     public String traverseTimes(int times){
         int headCount = 0;
         Node<T> window = head;
@@ -152,8 +165,23 @@ public class MyCircularLinkedList<T> {
     private void add(@NotNull Node<T> node, T value) {
         size++;
         Node<T> newNode = new Node<T>(value);
-        newNode.next = node.next;
+        Node<T> nextNode = node.next;
+        newNode.next = nextNode;
+        newNode.previous = node;
+        nextNode.previous = newNode;
         node.next = newNode;
     }
 
+    private void remove(@NotNull Node<T> node) {
+        size--;
+        Node<T> nextNode = node.next;
+        Node<T> prevNode = node.previous;
+        nextNode.previous = prevNode;
+        prevNode.next=nextNode;
+        if(node == head){
+            head = nextNode;
+        }
+        node.next = null;
+        node.previous = null;
+    }
 }

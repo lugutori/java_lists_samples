@@ -41,7 +41,7 @@ public class MyDoubleLinkedList<T> {
 
 
     public void add(int pos, T value) {
-        if (pos > size) {
+        if (pos > size || pos < 0) {
             //Throw exception
             return;
         }
@@ -50,14 +50,14 @@ public class MyDoubleLinkedList<T> {
             return;
         }
         Node<T> window = head;
-        for (int i = 0; i < pos; i++) {
+        for (int i = 1; i < pos; i++) {
             window = window.next;
         }
         add(window, value);
     }
 
     public void removePos(int position) {
-        if (position > size) {
+        if (position > size || position < 0) {
             //Throw exception
             return;
         }

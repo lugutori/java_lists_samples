@@ -4,7 +4,7 @@ import com.sun.istack.internal.NotNull;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class MyDoubleLinkedList<T> {
-    public Node<T> head;
+    private Node<T> head;
     private int size = 0;
     private final int NOT_FOUND = -1;
 
@@ -13,6 +13,7 @@ public class MyDoubleLinkedList<T> {
     }
 
     public void add(T value) {
+        size++;
         Node<T> newNode = new Node<T>(value);
         if (null == head) {
             head = newNode;
@@ -24,10 +25,10 @@ public class MyDoubleLinkedList<T> {
         }
         window.next = newNode;
         newNode.previous = window;
-        size ++;
     }
 
     public void insert(T value) {
+        size++;
         Node<T> newNode = new Node<T>(value);
         if (null == head) {
             head = newNode;
@@ -36,7 +37,6 @@ public class MyDoubleLinkedList<T> {
         newNode.next = head;
         head.previous = newNode;
         head = newNode;
-        size ++;
     }
 
 
@@ -45,12 +45,15 @@ public class MyDoubleLinkedList<T> {
             //Throw exception
             return;
         }
+        if(pos == 0){
+            insert(value);
+            return;
+        }
         Node<T> window = head;
-        for(int i = 0; i < pos; i++){
+        for (int i = 0; i < pos; i++) {
             window = window.next;
         }
-        add(window,value);
-        size++;
+        add(window, value);
     }
 
     public void removePos(int position) {
@@ -59,11 +62,10 @@ public class MyDoubleLinkedList<T> {
             return;
         }
         Node<T> window = head;
-        for(int i = 0; i < position; i++){
+        for (int i = 0; i < position; i++) {
             window = window.next;
         }
         remove(window);
-        size++;
     }
 
     public void removeValue(T value) {
@@ -71,15 +73,14 @@ public class MyDoubleLinkedList<T> {
         if (position != NOT_FOUND) {
             removePos(position);
         }
-        size--;
     }
 
     public int findValue(T value) {
         int result = NOT_FOUND;
         int count = 0;
         Node<T> window = head;
-        while(window != null && result == NOT_FOUND){
-            if(window.getData().equals(value)){
+        while (window != null && result == NOT_FOUND) {
+            if (window.getData().equals(value)) {
                 result = count;
             }
             window = window.next;
@@ -88,11 +89,11 @@ public class MyDoubleLinkedList<T> {
         return result;
     }
 
-    public int getSize(){
+    public int getSize() {
         return size;
     }
 
-    public T get(int pos){
+    public T get(int pos) {
         throw new NotImplementedException();
     }
 
@@ -111,7 +112,32 @@ public class MyDoubleLinkedList<T> {
         return builder.toString();
     }
 
+    public String traverse() {
+        StringBuilder builder = new StringBuilder("[");
+        Node<T> window = head;
+        Node<T> last = null;
+        while (null != window) {
+            builder.append(window.getData().toString());
+            if (null != window.next) {
+                builder.append(",");
+            }
+            last = window;
+            window = window.next;
+        }
+        builder.append("]\nReverse: \n[");
+        while (null != last) {
+            builder.append(last.getData().toString());
+            if (null != last.previous) {
+                builder.append(",");
+            }
+            last = last.previous;
+        }
+        builder.append("]");
+        return builder.toString();
+    }
+
     private void add(@NotNull Node<T> node, T value) {
+        size++;
         Node<T> newNode = new Node<T>(value);
         Node<T> nextNode = node.next;
         if (nextNode != null) {
@@ -123,6 +149,7 @@ public class MyDoubleLinkedList<T> {
     }
 
     private void remove(@NotNull Node<T> node) {
+        size--;
         Node<T> nextNode = node.next;
         Node<T> prevNode = node.previous;
         if (nextNode != null) {
@@ -130,6 +157,8 @@ public class MyDoubleLinkedList<T> {
         }
         if (prevNode != null) {
             prevNode.next = nextNode;
+        } else {
+            head = nextNode;
         }
         node.next = null;
         node.previous = null;

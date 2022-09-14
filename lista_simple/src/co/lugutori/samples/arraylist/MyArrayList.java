@@ -7,6 +7,7 @@ public class MyArrayList<T> {
     private int size = 0;
     private int capacity;
     private final int INITIAL_CAPACITY = 10;
+    private final int NOT_FOUND = -1;
 
     public MyArrayList() {
     }
@@ -59,17 +60,15 @@ public class MyArrayList<T> {
 
     public void removeValue(int value) {
         int position = findValue(value);
-        if (position != -1) {
+        if (position != NOT_FOUND) {
             removePos(position);
         }
     }
 
     public int findValue(int value) {
-        int result = -1;
-        boolean found = false;
-        for (int pos = 0; pos < size && !found; pos++) {
+        int result = NOT_FOUND;
+        for (int pos = 0; pos < size && result == NOT_FOUND; pos++) {
             if (listArray[pos].equals(value)) {
-                found = true;
                 result = pos;
             }
         }

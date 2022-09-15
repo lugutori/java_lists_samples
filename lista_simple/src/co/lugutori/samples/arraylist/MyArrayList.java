@@ -2,6 +2,11 @@ package co.lugutori.samples.arraylist;
 
 import java.util.Arrays;
 
+/**
+ * @author Luis Guillermo Torres R.
+ * 
+ * Clase Lista enlazada con arreglos y templates
+ */
 public class MyArrayList<T> {
     private T[] listArray;
     private int size = 0;
@@ -17,6 +22,7 @@ public class MyArrayList<T> {
 
     /**
      * Constructor con capacidad initial
+     * @param initialCapacity capcidad inicial
      */
     public MyArrayList(int initialCapacity) {
         initListWithCapacity(initialCapacity);

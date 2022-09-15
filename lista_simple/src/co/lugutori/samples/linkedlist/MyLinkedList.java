@@ -44,7 +44,7 @@ public class MyLinkedList<T> {
      */
     public void insert(T value) {
         size++;
-        Node<T> newNode = new Node<T>(value);
+        Node<T> newNode = new Node<>(value);
         if (null == head) {
             head = newNode;
             return;
@@ -184,7 +184,7 @@ public class MyLinkedList<T> {
      */
     private void add(Node<T> node, T value) {
         size++;
-        Node<T> newNode = new Node<T>(value);
+        Node<T> newNode = new Node<>(value);
         newNode.next = node.next;
         node.next = newNode;
     }

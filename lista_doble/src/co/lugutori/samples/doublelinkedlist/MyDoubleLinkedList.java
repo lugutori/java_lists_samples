@@ -45,7 +45,7 @@ public class MyDoubleLinkedList<T> {
      */
     public void insert(T value) {
         size++;
-        Node<T> newNode = new Node<T>(value);
+        Node<T> newNode = new Node<>(value);
         if (null == head) {
             head = newNode;
             return;

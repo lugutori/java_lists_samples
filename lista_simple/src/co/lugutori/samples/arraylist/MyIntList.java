@@ -1,7 +1,5 @@
 package co.lugutori.samples.arraylist;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Arrays;
 
 public class MyIntList {
@@ -78,7 +76,7 @@ public class MyIntList {
     }
 
     public int get(int pos) {
-        throw new NotImplementedException();
+        return 0;
     }
 
     public int getSize() {
@@ -91,6 +89,9 @@ public class MyIntList {
 
     @Override
     public String toString() {
+        if(size == 0){
+            return "[]";
+        }
         return Arrays.toString(Arrays.copyOfRange(listArray, 0, size));
     }
 

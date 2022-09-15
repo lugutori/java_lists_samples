@@ -1,5 +1,8 @@
 {
     "java.project.sourcePaths": [
-        "lista_simple/src/"
+        "lista_simple/src/"/*,
+        "lista_circular/src/",
+        "lista_doble/src",
+        "lista_doble_circular"*/
     ]
 }

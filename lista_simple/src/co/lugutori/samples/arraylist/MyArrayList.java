@@ -1,7 +1,5 @@
 package co.lugutori.samples.arraylist;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Arrays;
 
 public class MyArrayList<T> {
@@ -91,7 +89,7 @@ public class MyArrayList<T> {
     }
 
     public T get(int pos) {
-        throw new NotImplementedException();
+        return null;
     }
 
     private void initListWithCapacity(int initialCapacity) {

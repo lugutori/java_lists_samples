@@ -1,7 +1,5 @@
 package co.lugutori.samples.linkedlist;
 
-import com.sun.istack.internal.NotNull;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class MyLinkedList<T> {
     private Node<T> head;
@@ -98,7 +96,7 @@ public class MyLinkedList<T> {
     }
 
     public T get(int pos) {
-        throw new NotImplementedException();
+        return null;
     }
 
     @Override
@@ -116,7 +114,7 @@ public class MyLinkedList<T> {
         return builder.toString();
     }
 
-    private void add(@NotNull Node<T> node, T value) {
+    private void add(Node<T> node, T value) {
         size++;
         Node<T> newNode = new Node<T>(value);
         newNode.next = node.next;

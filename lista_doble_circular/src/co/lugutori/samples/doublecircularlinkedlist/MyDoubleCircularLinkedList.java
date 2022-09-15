@@ -1,8 +1,5 @@
 package co.lugutori.samples.doublecircularlinkedlist;
 
-import com.sun.istack.internal.NotNull;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 public class MyDoubleCircularLinkedList<T> {
     private Node<T> head;
     private int size = 0;
@@ -101,7 +98,7 @@ public class MyDoubleCircularLinkedList<T> {
     }
 
     public T get(int pos) {
-        throw new NotImplementedException();
+        return null;
     }
 
     @Override
@@ -162,7 +159,7 @@ public class MyDoubleCircularLinkedList<T> {
         return builder.toString();
     }
 
-    private void add(@NotNull Node<T> node, T value) {
+    private void add(Node<T> node, T value) {
         size++;
         Node<T> newNode = new Node<T>(value);
         Node<T> nextNode = node.next;
@@ -172,7 +169,7 @@ public class MyDoubleCircularLinkedList<T> {
         node.next = newNode;
     }
 
-    private void remove(@NotNull Node<T> node) {
+    private void remove(Node<T> node) {
         size--;
         Node<T> nextNode = node.next;
         Node<T> prevNode = node.previous;

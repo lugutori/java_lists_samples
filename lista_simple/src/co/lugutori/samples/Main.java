@@ -4,7 +4,7 @@ import co.lugutori.samples.arraylist.MyIntList;
 import co.lugutori.samples.linkedlist.MyLinkedList;
 
 class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Hello Lists World");
 
         MyIntList intList = new MyIntList();
@@ -32,38 +32,38 @@ class Main {
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
         intList.removePos(0);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        
+
         System.out.println("Testing Adding w/position on Array List");
-        intList.add(0,100);
+        intList.add(0, 100);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(1,200);
+        intList.add(1, 200);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(2,300);
+        intList.add(2, 300);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(3,400);
+        intList.add(3, 400);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(4,500);
+        intList.add(4, 500);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(5,600);
+        intList.add(5, 600);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(6,700);
+        intList.add(6, 700);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(7,800);
+        intList.add(7, 800);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(8,900);
+        intList.add(8, 900);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(9,1000);
+        intList.add(9, 1000);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(10,1100);
+        intList.add(10, 1100);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(11,1200);
+        intList.add(11, 1200);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
-        intList.add(12,1300);
+        intList.add(12, 1300);
         System.out.println("arrayList: " + intList + " size: " + intList.getSize() + " capacity: " + intList.getCapacity());
         System.out.println("Testing Finding on LinkedList");
         int pos1 = intList.findValue(50);
         int pos2 = intList.findValue(1000);
-        System.out.printf("Elements found in position %d and %d",pos1,pos2);
+        System.out.printf("Elements found in position %d and %d", pos1, pos2);
         System.out.println();
 
         //------------
@@ -104,26 +104,26 @@ class Main {
         list.removePos(0);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
         System.out.println("Testing Adding w/position on Linked List");
-        list.add(0,10);
+        list.add(0, 10);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
-        list.add(1,20);
+        list.add(1, 20);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
-        list.add(2,30);
+        list.add(2, 30);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
-        list.add(3,40);
+        list.add(3, 40);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
-        list.add(4,50);
+        list.add(4, 50);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
-        list.add(5,60);
+        list.add(5, 60);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
-        list.add(6,70);
+        list.add(6, 70);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
-        list.add(7,80);
+        list.add(7, 80);
         System.out.println("linkedlist: " + list + " size: " + list.getSize());
         System.out.println("Testing Finding on Linked List");
         pos1 = list.findValue(50);
         pos2 = list.findValue(1000);
-        System.out.printf("Elements found in position %d and %d",pos1,pos2);
+        System.out.printf("Elements found in position %d and %d", pos1, pos2);
         System.out.println();
     }
 }

@@ -42,7 +42,7 @@ public class MyIntList {
         if (size == capacity) {
             increaseCapacity();
         }
-        System.arraycopy(listArray, pos, listArray, pos+1, size - pos);
+        System.arraycopy(listArray, pos, listArray, pos + 1, size - pos);
         listArray[pos] = value;
         size++;
     }
@@ -89,7 +89,7 @@ public class MyIntList {
 
     @Override
     public String toString() {
-        if(size == 0){
+        if (size == 0) {
             return "[]";
         }
         return Arrays.toString(Arrays.copyOfRange(listArray, 0, size));
